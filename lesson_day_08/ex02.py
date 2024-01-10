@@ -13,9 +13,9 @@ for line in fhand:
     for w in splitted_line:
         if w not in unique_words:
             unique_words.append(w)
-print(unique_words)
+
 unique_words.sort()
-print(unique_words)
+
 print('There were', count, 'subject lines in', 'romeo.txt')
 
 
