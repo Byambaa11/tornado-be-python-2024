@@ -7,8 +7,8 @@ class Restaurant:
         print(f'Restaurant name is {self.restaurant_name}, cuisine type is {self.cuisine_type}')
         
     def open_restaurant(self):
-        
+         
      Yuna = Restaurant('Yuna', 'Korean')
 Yoshinava = Restaurant('Yoshinava', 'Japan')
- 
+print()
    
