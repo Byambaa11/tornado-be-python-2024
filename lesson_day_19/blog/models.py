@@ -1,12 +1,12 @@
 # Create your models here.
 # blog/models.py
 from django.db import models
-from django.urls import reverse
+from django.urls import reverse_lazy
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
-            "settings.AUTH_USER_MODEL",
+            "accounts.CustomUser",
             on_delete=models.CASCADE,
         )
     body = models.TextField()
@@ -15,5 +15,5 @@ class Post(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("post_detail", kwargs={"pk": self.pk})
+        return reverse_lazy("post_detail", kwargs={"pk": self.pk})
     
