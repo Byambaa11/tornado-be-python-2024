@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'posts.apps.PostsConfig',
     "accounts.apps.AccountsConfig",
+    'tailwind',
+    'theme',
+    'pages',
+    'django_browser_reload',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -143,3 +149,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 AUTH_USER_MODEL = "accounts.CustomUser"
+TAILWIND_APP_NAME = 'theme'
+EMAIL_BACKED = "django.core.mail.backends.console.EmailBackend"

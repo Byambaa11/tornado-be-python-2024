@@ -1,12 +1,11 @@
 <!-- templates/registration/login.html -->
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% block title %}Log In{% endblock title %}
-
 {% block content %}
 <h2>Log In</h2>
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Log In</button>
-</form>
+<form method="post" class="flex flex-col m-2">{% csrf_token %}
+    {% render_field form.username type="email" class="big-gray-50 m-2" %}
+    {% render_field form.password type="password" class="big-gray-50 m-2" %}
+<button type="submit">Log In</button> </form>
 {% endblock content %}

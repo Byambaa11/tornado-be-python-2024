@@ -12,5 +12,9 @@
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">Log In</a> |
 <a href="{% url 'signup' %}">Sign Up</a>
+<div class="container mx-auto mt-10">
+    <h1 class="text-3xl font-semibold">Rendered from Pages</h1>
+    <p class="mt-4">This is content rendered from Pages</p>
+</div>
 {% endif %}
 {% endblock content %}

@@ -1,6 +1,3 @@
-from django.test import TestCase
-
-# Create your tests here.
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
@@ -15,17 +12,18 @@ class SignupPageTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "registration/signup.html")
         
-    def test_signup_form(self):
-        response = self.client.post(
-            reverse("signup"),
-            {
-                "username": "test2",
-                "email": "test2@gmail.com",
-                "password1": "life1234",
-                "password2": "life1234",
-            },
-        )
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(get_user_model().objects.all().count, 1)
-        self.assertEqual(get_user_model().object.all()[0].username, "test2")
-        self.assertEqual(get_user_model().objects.all()[0].email, "test2@gmail.com")
+def test_signup_form(self):
+    response = self.client.post(
+        reverse("signup"),
+        {
+            "username": "test2",
+            "email": "test2@gmail.com",
+            "password1": "life1234",
+            "password2": "life1234",
+        },
+    )
+    self.assertEqual(response.status_code, 302)
+    self.assertEqual(get_user_model().objects.all().count(), 1)  # Corrected here
+    self.assertEqual(get_user_model().objects.all()[0].username, "test2")
+    self.assertEqual(get_user_model().objects.all()[0].email, "test2@gmail.com")
+    self.assertTrue(response, 'Nice body content')
