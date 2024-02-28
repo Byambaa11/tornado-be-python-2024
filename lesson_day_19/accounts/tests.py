@@ -26,4 +26,4 @@ def test_signup_form(self):
     self.assertEqual(get_user_model().objects.all().count(), 1)  # Corrected here
     self.assertEqual(get_user_model().objects.all()[0].username, "test2")
     self.assertEqual(get_user_model().objects.all()[0].email, "test2@gmail.com")
-    self.assertTrue(response, 'Nice body content')
+    

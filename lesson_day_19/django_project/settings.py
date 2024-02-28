@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'pages',
     'django_browser_reload',
     'widget_tweaks',
+    'articles',
 ]
+
+TIME_ZONE = 'Asia/Ulaanbaatar' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
