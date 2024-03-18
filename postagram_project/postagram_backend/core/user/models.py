@@ -32,7 +32,7 @@ class UserManager(BaseUserManager):
             raise TypeError('Superusers must have a password.')
         if email is None:
             raise TypeError('Superusers must have an email.')
-        if username is None:
+        if username is None:\
             raise TypeError('Superusers must have a username.')
         user = self.create_user(username, email, password, **kwargs)
         user.is_superuser = True
@@ -63,3 +63,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def name(self):
         return f"{self.first_name} {self.last_name}"
+    
+    posts_liked = models.ManyToManyField(
+    "core_post.Post",
+    related_name="liked_by"
+    )
+    
+    def like(self, post):
+        return self.posts_liked.add(post)
+    def remove_like(self, post):
+        return self.posts_liked.remove(post)
+    def has_liked(self, post):
+        return self.posts_liked.filter(pk=post.pk).exists()
