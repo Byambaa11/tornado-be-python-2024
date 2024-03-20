@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'core.auth',
     'rest_framework',
     'rest_framework_simplejwt',
-    'core.post'
+    'core.post',
+    'core.comment',
 ]
 
 MIDDLEWARE = [
