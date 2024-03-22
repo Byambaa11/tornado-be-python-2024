@@ -7,11 +7,11 @@ from rest_framework_nested import routers
 from core.comment.viewsets import CommentViewSet
 
 router = routers.SimpleRouter()
-
+posts_router = routers.SimpleRouter()
 
 urlpatterns  = [
     *router.urls,
-    
+    *posts_router.urls,
 ] 
 
 router.register(r'user', UserViewSet, basename='user')
